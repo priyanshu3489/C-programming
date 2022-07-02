@@ -1,0 +1,47 @@
+#include <stdio.h>
+int main()
+{
+     int a[10][10],ia[10][10];
+    int i,j,R=2,C=2,DA;
+    printf("\n2X2 Matrix");
+    printf("\nEnter the elements into Matrix\n");
+    for(i=0;i<R;i++)
+    {
+        for(j=0;j<C;j++)
+        {
+            printf("[%d][%d]:",i,j);
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("A=");
+    for(i=0;i<R;i++)
+    {
+        for(j=0;j<C;j++)
+        {
+            printf(" %4d",a[i][j]);
+        }
+        printf("\n");
+        printf("  ");
+    }
+    DA= (a[0][0]*a[1][1])-(a[1][0]*a[0][1]);
+    {
+        printf("\b\bDeterminant of A is %d",DA);
+    }
+    printf("\nInverce of Matrix A\n"); 
+    ia[0][0]=a[1][1]; 
+    ia[0][1]=-a[0][1];
+    ia[1][0]=-a[1][0];
+    ia[1][1]=a[0][0];
+    printf("IA=");
+    for(i=0;i<R;i++)
+    {
+        for(j=0;j<C;j++)
+        {
+            printf("%4d/%d",ia[i][j],DA);
+        }
+        printf("\n");
+        printf("   ");
+    }
+     return 0;
+}
+
