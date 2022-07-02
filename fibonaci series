@@ -1,0 +1,15 @@
+#include<stdio.h>
+void main()
+{
+    long int i=0,j=1,n,tot=0,k=0;
+    printf("Enter the Number=");
+    scanf("%ld",&n);
+    printf("%ld",i);
+    for(i=0;i<=n;i++)
+    {
+        tot=j+k;
+        j=k;
+        k=tot;
+        printf("\n%ld",tot);
+    }
+}
