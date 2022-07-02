@@ -1,0 +1,25 @@
+// string join without strcat
+#include <stdio.h>
+#include<string.h>
+int main()
+{
+    char name1[30],name2[30],name3[30];
+    int len1,len2,i,j;
+    printf("Enter 1st strin:");
+    gets(name1);
+    printf("Enter 2nd string:");
+    gets(name2);
+    len1=strlen(name1);
+    len2=strlen(name2);
+    for(i=0,j=0;i<len1;i++,j++)
+    {
+        name3[j]=name1[i];
+    }
+    for(i=0,j=len1;i<len2;i++,j++)
+    {
+        name3[j]=name2[i];
+    }
+    name3[j]='\0';
+    printf("\nThe last string is %s",name3);
+    return 0;
+}
