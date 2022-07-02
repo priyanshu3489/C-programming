@@ -1,0 +1,24 @@
+#include <stdio.h>
+int main()
+{
+    int i,No,factorCount=0;
+    printf("Enter The Number=");
+    scanf("%d",&No);
+    for(i=1;i<=No;i++)
+    {
+        if(No%i==0)
+        {
+            printf("%3d",i);
+            factorCount++;
+        }
+    }
+    if(factorCount==2)
+    {
+        printf("\n%d is Prime",No);
+    }
+    else
+    {
+        printf("\n%d is Not Prime",No);
+    }
+    return 0;
+}
