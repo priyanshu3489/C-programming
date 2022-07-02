@@ -1,0 +1,57 @@
+#include <stdio.h>
+int main()
+{
+    int a[3][3],ia[3][3];
+    int i,j,R=3,C=3,DA;
+    printf("\n3x3 Matrix");
+    printf("\nEnter the elements into Matrix\n");
+    for(i=0;i<R;i++)
+    {
+        for(j=0;j<C;j++)
+        {
+            printf("[%d][%d]:",i,j);
+            scanf("%d",&a[i][j]);
+        }
+    }
+    printf("A=");
+    for(i=0;i<R;i++)
+    {
+        for(j=0;j<C;j++)
+        {
+            printf(" %4d",a[i][j]);
+        }
+        printf("\n");
+        printf("  ");
+    }
+    DA= ((a[0][0])*((a[1][1]*a[2][2])-(a[2][1]*a[1][2])))-((a[0][1])*((a[1][0]*a[2][2])-(a[2][0]*a[1][2])))+((a[0][2])*((a[1][0]*a[2][1])-(a[2][0]*a[1][1])));
+    {
+        printf("\b\b->Determinant of A is %d",DA);
+    }
+    if (DA==0)
+        printf("\nInverce of Matrix is impossible");
+    else
+    {
+        printf("\n->Inverce of Matrix A\n"); 
+        ia[0][0]=(a[1][1]*a[2][2])-(a[2][1]*a[1][2]); 
+        ia[1][0]=-((a[1][0]*a[2][2])-(a[2][0]*a[1][2]));
+        ia[2][0]=(a[1][0]*a[2][1])-(a[2][0]*a[1][1]);
+        ia[0][1]=-((a[0][1]*a[2][2])-(a[2][1]*a[0][2]));
+        ia[1][1]=(a[0][0]*a[2][2])-(a[2][0]*a[0][2]);
+        ia[2][1]=-((a[0][0]*a[2][1])-(a[0][1]*a[2][0]));
+        ia[0][2]=(a[0][1]*a[1][2])-(a[1][1]*a[0][2]);
+        ia[1][2]=-((a[0][0]*a[1][2])-(a[1][0]*a[0][2]));
+        ia[2][2]=(a[0][0]*a[1][1])-(a[1][0]*a[0][1]);
+        printf("IA=");
+        for(i=0;i<R;i++)
+        {
+            for(j=0;j<C;j++)
+            {
+                printf("%4d/%d",ia[i][j],DA);
+            }
+            printf("\n");
+            printf("   ");
+        }
+    }
+     return 0;
+}
+
